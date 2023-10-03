@@ -1,6 +1,6 @@
 import { ProivderType } from "../../types";
 import ElectricityProvider from "./providerInterface";
-import ProviderService from "./providerService";
+import { ProviderService } from "./providerService";
 
 export class ProviderProxyService implements ElectricityProvider {
   private providerService: ProviderService;

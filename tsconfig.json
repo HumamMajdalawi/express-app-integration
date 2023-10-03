@@ -23,7 +23,8 @@
     "experimentalDecorators": true,
     "strictPropertyInitialization": false,
     "esModuleInterop": true,
-    "types": ["node", "jest"]
+    "types": ["node", "jest"],
+    "resolveJsonModule": true,
   },
   "include": ["src/**/*", "test/**/*"],
   "exclude": ["node_modules"]

@@ -1,14 +1,14 @@
 # Requirements
 
-    An endpoint is being developed to compare electricity prices. This endpoint will allow users to estimate their annual costs based on electricity consumption. It is expected to interface with an external provider that offers electricity tariffs. The primary responsibility is to handle user input, perform the necessary calculations, and adapt them based on the selected tariff type.
+An endpoint is being developed to compare electricity prices. This endpoint will allow users to estimate their annual costs based on electricity consumption. It is expected to interface with an external provider that offers electricity tariffs. The primary responsibility is to handle user input, perform the necessary calculations, and adapt them based on the selected tariff type.
 
 # Solution
 
-    The solution involves implementing an Express.js application that integrates with a third-party API to retrieve electricity providers and tariffs. This application will be designed using two specific design patterns to enhance its architecture.
+The solution involves implementing an Express.js application that integrates with a third-party API to retrieve electricity providers and tariffs. This application will be designed using two specific design patterns to enhance its architecture.
 
-    - Proxy Pattern: The Proxy Pattern is like a middleman. It creates a placeholder for another object to control access to it. Instead of interacting directly with the actual object, you go through the proxy, which can add extra functionality like lazy loading or access control. It's like having someone screen your calls before they reach you.
+- Proxy Pattern: The Proxy Pattern is like a middleman. It creates a placeholder for another object to control access to it. Instead of interacting directly with the actual object, you go through the proxy, which can add extra functionality like lazy loading or access control. It's like having someone screen your calls before they reach you.
 
-    - Adapter Pattern: Makes sure the app can smoothly work with the API by bridging any interface differences and handling data translation between them.
+- Adapter Pattern: Makes sure the app can smoothly work with the API by bridging any interface differences and handling data translation between them.
 
 ## Endpoint: `/calculate`
 

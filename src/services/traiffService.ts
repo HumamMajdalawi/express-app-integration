@@ -2,7 +2,7 @@ import { AdaptedProivderType, ProivderType, ProviderOption } from "../types";
 import AdapterService from "./adapterServices/adapterService";
 import { ProviderProxyService } from "./providerServices/providerProxyService";
 
-export default class TraiffService {
+export class TraiffService {
   async getProvidersOptions(consumption: number): Promise<ProviderOption[]> {
     // Getting available providers
     const providers = await this.getProviders();

@@ -9,6 +9,11 @@ export class ProviderProxyService implements ElectricityProvider {
     this.providerService = new ProviderService();
   }
   async load(): Promise<ProviderType[]> {
-    return this.providerService.load();
+    try {
+      return this.providerService.load();
+    } catch (error) {
+      console.error(error);
+      throw new Error("Unable to load providers");
+    }
   }
 }

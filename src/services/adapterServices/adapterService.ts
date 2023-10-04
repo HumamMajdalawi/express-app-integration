@@ -3,7 +3,7 @@ import TypeOneResolver from "./resolvers/typeOneResolver";
 import TypeTwoResolver from "./resolvers/typeTwoResolver";
 
 export default class AdapterService {
-  resolve(providerType: number, provider: ProviderType) {
+  getResolver(providerType: number, provider: ProviderType) {
     switch (providerType) {
       case 1:
         return new TypeOneResolver(provider);

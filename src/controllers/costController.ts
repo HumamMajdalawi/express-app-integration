@@ -13,8 +13,10 @@ export class CostController {
         });
       }
 
-      const tariffService = new TariffService(consumption);
-      const providersAnnualCost = await tariffService.getProvidersAnnualCost();
+      const tariffService = new TariffService();
+      const providersAnnualCost = await tariffService.getProvidersAnnualCost(
+        consumption
+      );
       return res.status(200).json({
         success: true,
         message: "success",

@@ -2,8 +2,8 @@ import { TariffService } from "./tariffService";
 
 describe("Tariff Service", () => {
   it("Should return providers annual cost sorted ASC ==> consumption = 3500", async () => {
-    const tariffService = new TariffService(3500);
-    const options = await tariffService.getProvidersAnnualCost();
+    const tariffService = new TariffService();
+    const options = await tariffService.getProvidersAnnualCost(3500);
 
     const productOneCost = options[0];
     const productTwoCost = options[1];
@@ -12,8 +12,8 @@ describe("Tariff Service", () => {
   });
 
   it("Should return providers annual cost sorted ASC ==> consumption = 4500", async () => {
-    const tariffService = new TariffService(4500);
-    const options = await tariffService.getProvidersAnnualCost();
+    const tariffService = new TariffService();
+    const options = await tariffService.getProvidersAnnualCost(4500);
 
     const productOneCost = options[0];
     const productTwoCost = options[1];

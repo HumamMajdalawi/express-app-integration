@@ -13,7 +13,7 @@ export type ProviderOption = {
   annualCost: number;
 };
 
-export type AdaptedProviderType = {
+export type ProviderResolverType = {
   name: string;
   resolver: TypeResolver | null;
 };

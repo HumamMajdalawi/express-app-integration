@@ -10,11 +10,11 @@ The solution involves implementing an Express.js application that integrates wit
 
 - Adapter Pattern: Makes sure the app can smoothly work with the API by bridging any interface differences and handling data translation between them.
 
-## Endpoint: `/calculate`
+## Endpoint: `/costs/calculate`
 
 ### Description
 
-This endpoint is responsible for calculating and retrieving electricity provider options based on user consumption data. It utilizes the `TraiffService` to process the calculation and obtain the provider options.
+This endpoint is responsible for calculating and retrieving electricity provider options based on user consumption data. It utilizes the `TariffService` to process the calculation and obtain the provider options.
 
 ### HTTP Method
 
@@ -35,8 +35,8 @@ This endpoint is responsible for calculating and retrieving electricity provider
   ```json
   {
     "success": true,
-    "message": "Success",
-    "options": [
+    "message": "success",
+    "providersAnnualCost": [
       {
         "name": "Product A",
         "annualCost": 830

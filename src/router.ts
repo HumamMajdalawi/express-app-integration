@@ -1,8 +1,8 @@
 import { Router } from "express";
-import PostController from "./controllers/postController";
+import { CostController } from "./controllers/costController";
 
 const router = Router();
 
-router.route("/calculate").post(PostController);
+router.route("/costs/calculate").post(CostController.getProvidersAnnualCost);
 
 export default router;

@@ -81,6 +81,6 @@ Launch the application utilizing the 'Bash script' found within the 'scripts' di
 
 # Commands
 
-- `npm run test:units` Run all unit tests
+- `npm run test:unit` Run all unit tests
 - `npm run test:integration` Run all integration tests
 - `npm run start` Start application server

@@ -1,4 +1,4 @@
-import { ProivderType } from "../../types";
+import { ProviderType } from "../../types";
 import ElectricityProvider from "./providerInterface";
 import { ProviderService } from "./providerService";
 
@@ -8,7 +8,7 @@ export class ProviderProxyService implements ElectricityProvider {
   constructor() {
     this.providerService = new ProviderService();
   }
-  async load(): Promise<ProivderType[]> {
+  async load(): Promise<ProviderType[]> {
     return this.providerService.load();
   }
 }

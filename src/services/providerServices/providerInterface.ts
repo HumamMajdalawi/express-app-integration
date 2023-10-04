@@ -1,5 +1,5 @@
-import { ProivderType } from "../../types";
+import { ProviderType } from "../../types";
 
 export default interface ElectricityProvider {
-  load(): Promise<ProivderType[]>;
+  load(): Promise<ProviderType[]>;
 }

@@ -1,4 +1,4 @@
-import { ProivderType } from "../types";
+import { ProviderType } from "../types";
 
 export default class Provider {
   public name: string;
@@ -7,7 +7,7 @@ export default class Provider {
   public additionalKwhCost: number;
   public includedKwh?: number;
 
-  constructor(provider: ProivderType) {
+  constructor(provider: ProviderType) {
     this.name = provider.name;
     this.type = provider.type;
     this.baseCost = provider.baseCost;

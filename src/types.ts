@@ -1,6 +1,6 @@
 import TypeResolver from "./services/adapterServices/resolvers/resolverInterface";
 
-export type ProivderType = {
+export type ProviderType = {
   name: string;
   type: number;
   baseCost: number;
@@ -13,7 +13,7 @@ export type ProviderOption = {
   annualCost: number;
 };
 
-export type AdaptedProivderType = {
+export type AdaptedProviderType = {
   name: string;
   resolver: TypeResolver | null;
 };

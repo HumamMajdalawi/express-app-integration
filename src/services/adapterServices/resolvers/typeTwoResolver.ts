@@ -1,10 +1,10 @@
 import Provider from "../../../models/provider";
-import { ProivderType } from "../../../types";
+import { ProviderType } from "../../../types";
 import TypeResolver from "./resolverInterface";
 
 export default class TypeTwoResolver implements TypeResolver {
   private provider: Provider;
-  constructor(providerData: ProivderType) {
+  constructor(providerData: ProviderType) {
     this.provider = new Provider(providerData);
   }
 

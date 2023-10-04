@@ -1,9 +1,9 @@
-import { TraiffService } from "./traiffService";
+import { TariffService } from "./tariffService";
 
-describe("Traiff Service", () => {
+describe("Tariff Service", () => {
   it("Should return providers annual cost sorted ASC ==> consumption = 3500", async () => {
-    const traiffService = new TraiffService();
-    const options = await traiffService.getProvidersOptions(3500);
+    const tariffService = new TariffService(3500);
+    const options = await tariffService.getProvidersAnnualCost();
 
     const productOneCost = options[0];
     const productTwoCost = options[1];
@@ -12,8 +12,8 @@ describe("Traiff Service", () => {
   });
 
   it("Should return providers annual cost sorted ASC ==> consumption = 4500", async () => {
-    const traiffService = new TraiffService();
-    const options = await traiffService.getProvidersOptions(4500);
+    const tariffService = new TariffService(4500);
+    const options = await tariffService.getProvidersAnnualCost();
 
     const productOneCost = options[0];
     const productTwoCost = options[1];

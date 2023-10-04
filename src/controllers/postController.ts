@@ -1,19 +1,19 @@
 import { Request, Response } from "express";
-import { TraiffService } from "../services/traiffService";
+import { TariffService } from "../services/tariffService";
 
 const PostController = async (req: Request, res: Response) => {
   try {
     const consumption = req.body.consumption;
-    // validate consupmtion input
-    if (!consumption || consumption < 0) {
+    // validate consumption input
+    if (!consumption || isNaN(consumption) || consumption < 0) {
       return res.status(422).json({
         success: false,
         message: "Invalid Parameters",
       });
     }
 
-    const traiffService = new TraiffService();
-    const options = await traiffService.getProvidersOptions(consumption);
+    const tariffService = new TariffService(consumption);
+    const options = await tariffService.getProvidersAnnualCost();
 
     return res.status(200).json({
       success: true,

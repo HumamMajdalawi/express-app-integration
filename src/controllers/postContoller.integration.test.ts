@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import PostController from "./postController";
+import { CostController } from "./costController";
 
 const mockGetProvidersOptions = jest.fn();
 
@@ -9,7 +9,7 @@ jest.mock("../services/tariffService", () => ({
   })),
 }));
 
-describe("Post Controller", () => {
+describe("Cost Controller", () => {
   it("Should return 422 when validate request parameters is undefined", async () => {
     const req = { body: { consumption: undefined } } as unknown as Request;
     const res = {
@@ -17,7 +17,7 @@ describe("Post Controller", () => {
       json: jest.fn(),
     } as unknown as Response;
 
-    await PostController(req, res);
+    await CostController.getProvidersAnnualCost(req, res);
 
     expect(res.status).toHaveBeenCalledWith(422);
     expect(res.json).toHaveBeenCalledWith({
@@ -33,7 +33,7 @@ describe("Post Controller", () => {
       json: jest.fn(),
     } as unknown as Response;
 
-    await PostController(req, res);
+    await CostController.getProvidersAnnualCost(req, res);
 
     expect(res.status).toHaveBeenCalledWith(422);
     expect(res.json).toHaveBeenCalledWith({
@@ -49,7 +49,7 @@ describe("Post Controller", () => {
       json: jest.fn(),
     } as unknown as Response;
 
-    await PostController(req, res);
+    await CostController.getProvidersAnnualCost(req, res);
 
     expect(res.status).toHaveBeenCalledWith(422);
     expect(res.json).toHaveBeenCalledWith({
@@ -65,7 +65,7 @@ describe("Post Controller", () => {
       json: jest.fn(),
     } as unknown as Response;
 
-    await PostController(req, res);
+    await CostController.getProvidersAnnualCost(req, res);
     expect(res.status).toHaveBeenCalledWith(200);
     expect(mockGetProvidersOptions).toBeCalled();
     expect(res.json).toHaveBeenCalled();

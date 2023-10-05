@@ -3,8 +3,8 @@ import { CostController } from "./costController";
 
 const mockGetProvidersOptions = jest.fn();
 
-jest.mock("../services/tariffService", () => ({
-  TariffService: jest.fn().mockImplementation(() => ({
+jest.mock("../services/costService", () => ({
+  CostService: jest.fn().mockImplementation(() => ({
     getProvidersAnnualCost: mockGetProvidersOptions,
   })),
 }));
@@ -22,7 +22,7 @@ describe("Cost Controller", () => {
     expect(res.status).toHaveBeenCalledWith(422);
     expect(res.json).toHaveBeenCalledWith({
       success: false,
-      message: "Invalid Parameters",
+      message: "Invalid consumption value",
     });
   });
 
@@ -38,7 +38,7 @@ describe("Cost Controller", () => {
     expect(res.status).toHaveBeenCalledWith(422);
     expect(res.json).toHaveBeenCalledWith({
       success: false,
-      message: "Invalid Parameters",
+      message: "Invalid consumption value",
     });
   });
 
@@ -54,7 +54,7 @@ describe("Cost Controller", () => {
     expect(res.status).toHaveBeenCalledWith(422);
     expect(res.json).toHaveBeenCalledWith({
       success: false,
-      message: "Invalid Parameters",
+      message: "Invalid consumption value",
     });
   });
 

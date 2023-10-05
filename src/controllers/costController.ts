@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { TariffService } from "../services/tariffService";
+import { CostService } from "../services/costService";
 
 export class CostController {
   static async getProvidersAnnualCost(req: Request, res: Response) {
@@ -9,14 +9,16 @@ export class CostController {
       if (!consumption || isNaN(consumption) || consumption < 0) {
         return res.status(422).json({
           success: false,
-          message: "Invalid Parameters",
+          message: "Invalid consumption value",
         });
       }
 
-      const tariffService = new TariffService();
-      const providersAnnualCost = await tariffService.getProvidersAnnualCost(
+      const costService = new CostService();
+      // Get providers annual cost based on entered consumption
+      const providersAnnualCost = await costService.getProvidersAnnualCost(
         consumption
       );
+
       return res.status(200).json({
         success: true,
         message: "success",

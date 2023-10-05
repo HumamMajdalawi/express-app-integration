@@ -20,7 +20,7 @@ export default class TypeOneResolver implements TypeResolver {
   }
 
   private calcConsumptionCost(consumption: number): number {
-    // costInCents = (consupmtion (KWH/YEAR) * additionalKwhCost(CENT))
+    // costInCents = (consumption (KWH/YEAR) * additionalKwhCost(CENT))
     // costInEuros = costInCents / 100
 
     return (consumption * this.provider.additionalKwhCost) / 100;

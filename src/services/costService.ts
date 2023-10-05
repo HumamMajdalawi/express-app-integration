@@ -2,7 +2,7 @@ import { ProviderResolverType, ProviderType, ProviderOption } from "../types";
 import AdapterService from "./adapterServices/adapterService";
 import { ProviderProxyService } from "./providerServices/providerProxyService";
 
-export class TariffService {
+export class CostService {
   async getProvidersAnnualCost(consumption: number): Promise<ProviderOption[]> {
     // Getting available providers
     const providers = await this.getProviders();
@@ -10,15 +10,15 @@ export class TariffService {
     // Adapt providers data
     const providerResolvers = this.getProviderResolvers(providers);
 
-    // Calculate based on consumption
+    // Calculate annual cost based on consumption
     const providersAnnualCost: ProviderOption[] = [];
-    for (const provider of providerResolvers) {
+    for (const { resolver, name } of providerResolvers) {
       // Check if provider type resolver exists
-      if (provider.resolver) {
+      if (resolver) {
         // Calculate provider annual cost
-        const annualCost = provider.resolver.calculateAnnualCost(consumption);
+        const annualCost = resolver.calculateAnnualCost(consumption);
         // Push new entry to providers annual cost list
-        providersAnnualCost.push({ name: provider.name, annualCost });
+        providersAnnualCost.push({ name, annualCost });
       }
     }
 
@@ -29,6 +29,7 @@ export class TariffService {
   // what if providers are so many?
   async getProviders(): Promise<ProviderType[]> {
     const providerProxyService = new ProviderProxyService();
+    // Request providers from Third party service
     return providerProxyService.load();
   }
 
